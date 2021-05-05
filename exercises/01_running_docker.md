@@ -2,10 +2,8 @@
 
 The first set of exercises are related to running Docker containers. They will give us an in-depth overview of the most important things we need to consider when it comes to running Docker containers. 
 
-For this set of exercises we will use a simple Docker container for `fastQC` process, more specifically [quay.io/biocontainers/fastqc](https://quay.io/repository/biocontainers/fastqc?tab=info) (version 0.11.9--0). 
-At the end of the exercises, you will run `fastQC` on a fastq-file by using a Docker container.
 
-## Learning outcomes
+### Learning outcomes
 After having completed these exercises you will be able to:  
 * Use the command line to run a bioinformatics tool on the command line
 * Set the default user and group with the `-u` option
@@ -14,10 +12,11 @@ After having completed these exercises you will be able to:
 * Overwrite the default working directory within a container with `-w` 
 * Use the option `--mount` to bind mount a host directory to a container
 
+### Container
+For this set of exercises we will use a simple Docker container for `fastQC` process, more specifically [quay.io/biocontainers/fastqc](https://quay.io/repository/biocontainers/fastqc?tab=info) (version 0.11.9--0). 
+At the end of the exercises, you will run `fastQC` on a fastq-file by using a Docker container.
 
-
-## Data
-
+### Data
 The example fastq file(s) are located in the `~/containers/data/` folder. If not present, or you want to download them yourself, you can retrieve them with the following commands. We will use them in combination with the Docker containers to mimic a simple, though relevant bioinformatics data analysis process. 
 
 ```sh
@@ -26,7 +25,7 @@ tar -xzvf ecoli_reads.tar.gz
 ```
 Make sure they are located in the `data/` folder. 
 
-## Pull and run the Docker container
+## 1. Pull and run the Docker container
 
 Let's first explore how we can retrieve a Docker image from its repository and use it locally on our computer (or VM in this case). As mentioned above, we will use [quay.io/biocontainers/fastqc](https://quay.io/repository/biocontainers/fastqc?tab=info) as our Docker container and more specifically the version `0.11.9--0`. 
 
@@ -53,7 +52,7 @@ docker rm <container-id>
 ```
 
 
-## Bind mounting a local directory
+## 2. Bind mounting a local directory
 
 Now we have the data and now how to interact with the Docker image and container, let's explore how we can process the data with the container. 
 
@@ -75,7 +74,7 @@ This can be solved in two ways as we have seen from the theory.
 Note: Don't mount a directory that contains a lot of files or subdirectories (like `~`)
 
 
-## Managing file and folder permissions 
+## 3. Managing file and folder permissions 
 The following three exercises aim to give an idea of how folders and files are managed on your computer locally as opposed to our Docker containers. Try to answer the following questions and think about how the 
 
 ### Exercise 3
@@ -90,7 +89,7 @@ The following three exercises aim to give an idea of how folders and files are m
 
 After these exercises it should be clear that docker containers will output files at `root`-level by default, however that we can overcome this behaviour by using the user ID and group ID levels on run-time. To generalize this command over different infrastructures (with possible different settings) we can provide it the following parameter `--user $(id -u):(id -g)`. 
 
-## Using working directories 
+## 4. Using working directories 
 
 The *working directory* sets the location for running instructions (installations, commands, file copying, etc.) defined in the `Dockerfile`. The working directory is described in the `Dockerfile` with:
 ```
