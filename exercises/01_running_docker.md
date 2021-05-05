@@ -67,7 +67,7 @@ This can be solved in two ways as we have seen from the theory.
 ### Exercise 2
 - Run a docker container and approach it interactively. In addition, mount the local `data/` folder to a new folder in the container `/data` within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Additional parameters: remove the container after it has run.   
 
-- Do a quality control on the WT samples by using the following command: `fastqc WT_lib1_R1.fq.gz`. For this you can use the command here above and change the interactive part for the actual command. 
+- Do a quality control on the WT samples by using the following command: `fastqc /data/WT_lib1_R1.fq.gz`. For this you can use the command here above and change the interactive part for the actual command. Why do we need to add `/data/` in the `fastqc` command. 
 
 --- 
 
@@ -75,14 +75,18 @@ Note: Don't mount a directory that contains a lot of files or subdirectories (li
 
 
 ## 3. Managing file and folder permissions 
-The following three exercises aim to give an idea of how folders and files are managed on your computer locally as opposed to our Docker containers. Try to answer the following questions and think about how the 
+The following exercises aim to give an idea of how folders and files are managed on your computer locally as opposed to our Docker containers. 
 
 ### Exercise 3
 
 - Who is the default user within the container?  
-- Run the `quay.io/biocontainers/fastqc:0.11.9--0` container interactively and mount the local `data/` directory. Create a temporary file `file1.txt` in the `data/` directory of the container. Quit the interactive session. On your host, check the file permissions.
-- On the host, create a temporary file `file2.txt` in the `data/` directory. Run the `fastqc` container interactively and inspect the file permissions of this file in the container.  Check the file permissions of this file in the container.  
+
+- Run the `quay.io/biocontainers/fastqc:0.11.9--0` container interactively and mount the local `data/` directory. Create a temporary file `file1.txt` in the `scratch/` directory of the container. Quit the interactive session. On your host, check the file permissions.
+
+- On the host, create a temporary file `file2.txt` in the `data/` directory. Run the `fastqc` container interactively and inspect the file permissions of this file in the container.  Check the file permissions of this file in the container (`scratch/` directory).  
+
 - On the host, find out which UID and GID you have. Tip: you can find your UID and GID with: `id -u` and `id -g`. 
+
 - Execute a docker container by using the `-u` parameter and and in the meantime creating a temporary file `file3.txt` with `touch`. In addition, mount your current directory to `/data` within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Check the file permissions of this file in the container.  
 
 ---
