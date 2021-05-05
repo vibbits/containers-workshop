@@ -103,9 +103,16 @@ As an example, have a look at the Dockerfile of our `fastqc` container [here](ht
 
 ### Exercise 4
 
-- Execute a docker container by using the working directory option `-w` for a directory `/workdir` and creating a temporary file `file4.txt` with `touch`. In addition, mount your current directory to `/workdir` within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Check the file location of this file in the container.
-- Use the command `docker inspect` on the current image `quay.io/biocontainers/fastqc:0.11.9--0` and extract the working directory (`WorkingDir`) using `grep`.
+- Execute a docker container by using the working directory option `-w` for a directory `scratch/` and creating a temporary file `file4.txt` with `touch`. In addition, mount your current directory to `scratch/` working directory within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Check the file location of this file on the host.
+
+
+
 - Execute a docker container with your user and group ID running `fastqc` on the file `WTXXX.fq.gz`. In addition, mount your current directory to the default working directory within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Verify that the HTML report is created with the correct file permissions.
+    - Extra: can you analyze all fastq files using a glob-pattern (`WT*.fq.gz`)? What do you need to change to make this work? 
+
+- Use the command `docker inspect` on the image `biocontainers/fastqc:v0.11.9_cv8` and extract the working directory (`WorkingDir`) using `grep`.
+
+
 - Go to [Biocontainers.pro](https://biocontainers.pro/) and find the Docker image of `trimmomatic`. In addition, mount your current directory to the default working directory within the Docker container of `trimmomatic`. Verify that the HTML report is created with the correct file permissions.
 
 For this you can use the following set of parameters:
