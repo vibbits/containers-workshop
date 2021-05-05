@@ -1,0 +1,20 @@
+name: pipeline-tools-1.0.0
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  ## conda-forge packages, sorting now alphabetically, without the channel prefix!
+  - matplotlib=3.0.3        # Current 3.1.0 build incompatible with multiqc=1.7
+  - r-base=3.6.1
+  - conda-forge::r-data.table=1.12.4
+  - conda-forge::r-gplots=3.0.1.1
+  - conda-forge::r-markdown=1.1
+
+  ## bioconda packages, see above
+  - fastqc=0.11.8
+  - sra-tools=2.10.1
+  - multiqc=1.7
+  - samtools=1.9
+  - star=2.6.1d             # Don't upgrade me - 2.7X indices incompatible with iGenomes.
+  - trimmomatic=0.39

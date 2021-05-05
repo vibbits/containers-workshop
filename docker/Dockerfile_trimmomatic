@@ -1,0 +1,54 @@
+FROM ubuntu:16.04
+
+LABEL description = "Minimal image for the J&J course Docker - example 1."
+MAINTAINER "Alexander Botzki" alexander.botzki@vib.be
+
+# Use bash as shell
+SHELL ["/bin/bash", "-c"]
+# Set workdir
+WORKDIR /course
+
+# Install necessary tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends bzip2 \
+                                               ca-certificates \
+                                               curl \
+                                               fontconfig \
+                                               git \
+                                               language-pack-en \
+                                               tzdata \
+                                               vim \
+                                               unzip \
+                                               wget \
+                                               default-jdk \
+                                               make \
+    && apt-get clean
+
+# Fetch trimmomatic from github 
+ADD https://github.com/timflutre/trimmomatic/archive/master.tar.gz /tmp/trimmomatic.tar.gz
+
+# Unpack trimmomatic tarball and execute make
+RUN set -e \
+      && tar xvf /tmp/trimmomatic.tar.gz -C /opt --remove-files \
+      && mv /opt/trimmomatic-* /opt/trimmomatic \
+      && cd /opt/trimmomatic \
+      && make
+
+# prepare 
+RUN set -e \
+      && mkdir /opt/trimmomatic/bin \
+      && echo '#!/usr/bin/env bash' > /opt/trimmomatic/bin/trimmomatic \
+      && echo 'java -jar /opt/trimmomatic/classes/trimmomatic.jar ${@}' \
+        >> /opt/trimmomatic/bin/trimmomatic \
+      && chmod +x /opt/trimmomatic/bin/trimmomatic
+
+# Add conda to PATH and set locale
+ENV PATH="/usr/miniconda3/bin:${PATH}"
+ENV LC_ALL en_US.UTF-8
+ENV LC_LANG en_US.UTF-8
+
+# Add trimmomatic to the PATH
+ENV PATH /opt/trimmomatic/bin:${PATH}
+
+# Set trimmomatic as main command
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/trimmomatic/classes/trimmomatic.jar"]
