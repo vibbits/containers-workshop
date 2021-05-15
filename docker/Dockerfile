@@ -1,30 +1,19 @@
-FROM ubuntu:18.04
+LABEL software="analysispipeline basic RNA-seq" \
+      base_image="ubuntu 18:04" \
+      container="analysispipeline" \
+      about.summary="image provides basic tools for RNA-seq pipeline" \
+      about.home="https://github.com/vibbits/containers-workshop" \
+      software.version="1.0.0" \
+      upstream.version="1.0.0" \
+      version="1" \
+      about.copyright="VIB Bioinformatics Core" \
+      about.license="MIT" \
+      about.license_file="" \
+      about.tags=""
 
-LABEL description = "Minimal image for the J&J course Docker - example 2."
-MAINTAINER "Alexander Botzki" alexander.botzki@vib.be
-
-# Use bash as shell
-SHELL ["/bin/bash", "-c"]
 # Set workdir
 WORKDIR /course
 
-#
-ENV TZ=Europe/Amsterdam
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Install necessary tools
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends bzip2 \
-                                               ca-certificates \
-                                               curl \
-                                               fontconfig \
-                                               git \
-                                               language-pack-en \
-                                               tzdata \
-                                               vim \
-                                               unzip \
-                                               wget \
-    && apt-get clean
 
 # Install Miniconda and add to PATH
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh && \
@@ -35,12 +24,42 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh
     echo ". /usr/miniconda3/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
+# Install necessary tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends bzip2 \
+                                               ca-certificates \
+                                               curl \
+                                               fontconfig \
+                                               git \
+                                               language-pack-en \
+                                               vim \
+                                               unzip \
+                                               wget \
+    && apt-get clean
+
+
+# copy environment.yml into the image
+ENV PATH=/usr/miniconda3/envs/pipeline-tools-1.0.0/bin/:$PATH
+RUN conda env create -f /environment.yml && conda clean -a
+COPY environment.yml /
+
 # Add conda to PATH and set locale
 ENV PATH="/usr/miniconda3/bin:${PATH}"
 ENV LC_ALL en_US.UTF-8
 ENV LC_LANG en_US.UTF-8
 
-# copy environment.yml into the image 
-COPY environment.yml /
-RUN conda env create -f /environment.yml
-ENV PATH=/usr/miniconda3/envs/pipeline-tools-1.0.0/bin/:$PATH
+FROM ubuntu:18.04
+
+# Use bash as shell
+SHELL ["/bin/bash", "-c"]
+
+
+# build
+# docker build -t analysispipeline:1.0.1 -f Dockerfile . 
+# run on example data
+# docker run -u="$(id -u):$(id -g)" --rm -v ~/methplotlib/examples/:/data -w="/data/" methplotlib \
+# bash -c "methplotlib -m NA19240-methylation_ACTB_calls.tsv.gz NA19240-methylation_ACTB_frequency.tsv.gz \
+#          -n calls frequencies -w chr7:5,525,542-5,543,028 \
+#          -g GRCh38-ACTB-locus.gtf.gz \
+#          --simplify \
+#          -b DNase_cluster_ACTB.bed.gz"

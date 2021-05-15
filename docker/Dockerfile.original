@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Use bash as shell
 SHELL ["/bin/bash", "-c"]
@@ -13,7 +13,6 @@ RUN apt-get update && \
                                                fontconfig \
                                                git \
                                                language-pack-en \
-                                               tzdata \
                                                vim \
                                                unzip \
                                                wget \
@@ -33,22 +32,31 @@ ENV PATH="/usr/miniconda3/bin:${PATH}"
 ENV LC_ALL en_US.UTF-8
 ENV LC_LANG en_US.UTF-8
 
-# Install package from conda
-RUN conda config --add channels conda-forge && \
-    conda config --add channels bioconda && \
-    conda create --name methplotlib && \
-    conda install --name methplotlib methplotlib=0.19.0
-    
-# add base to path 
-ENV PATH=/usr/miniconda3/envs/methplotlib/bin/:$PATH
+# copy environment.yml into the image 
+COPY environment.yml /
+RUN conda env create -f /environment.yml && conda clean -a
+ENV PATH=/usr/miniconda3/envs/pipeline-tools-1.0.0/bin/:$PATH
 
-# add annotations for the docker image
+LABEL software="analysispipeline basic RNA-seq" \
+      base_image="ubuntu 18:04" \
+      container="analysispipeline" \
+      about.summary="image provides basic tools for RNA-seq pipeline" \
+      about.home="https://github.com/vibbits/containers-workshop" \
+      software.version="1.0.0" \
+      upstream.version="1.0.0" \
+      version="1" \
+      about.copyright="VIB Bioinformatics Core" \
+      about.license="MIT" \
+      about.license_file="" \
+      about.tags=""
 
-
-
-
-
-
-# add build instructions for this image
-
+# build
+# docker build -t analysispipeline:1.0.1 -f Dockerfile . 
+# run on example data
+# docker run -u="$(id -u):$(id -g)" --rm -v ~/methplotlib/examples/:/data -w="/data/" methplotlib \
+# bash -c "methplotlib -m NA19240-methylation_ACTB_calls.tsv.gz NA19240-methylation_ACTB_frequency.tsv.gz \
+#          -n calls frequencies -w chr7:5,525,542-5,543,028 \
+#          -g GRCh38-ACTB-locus.gtf.gz \
+#          --simplify \
+#          -b DNase_cluster_ACTB.bed.gz"
 

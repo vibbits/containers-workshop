@@ -1,0 +1,49 @@
+FROM biocontainers/biocontainers:vdebian-buster-backports_cv1 
+
+# UTF-8 / locales
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+
+# user for installation
+USER root
+# force non interactive
+ENV DEBIAN_FRONTEND noninteractive
+
+# install system dep and python
+RUN apt-get update --fix-missing && \
+    apt-get install -y build-essential \
+                       git \ 
+                       gzip \
+                       python3-dev \
+                       python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# install Cython and methplotlib via pip3
+RUN pip3 install Cython 
+
+# switch to non-root user
+USER biodocker
+
+LABEL software="metplotlib" \ 
+      base_image="biocontainers/biocontainers:vdebian-buster-backports_cv1" \ 
+      container="metplotlib" \ 
+      about.summary="Plotting tools for nanopore methylation data" \ 
+      about.home="https://github.com/wdecoster/methplotlib" \ 
+      software.version="0.14.1" \ 
+      upstream.version="0.14.1" \ 
+      version="1" \ 
+      about.copyright="Wouter Decoster" \ 
+      about.license="MIT" \ 
+      about.license_file="" \ 
+      about.tags=""
+
+# build
+# docker build -t methplotlib:0.14.1 .
+# run on exqmple data
+# docker run -u="$(id -u):$(id -g)" --rm -v ~/methplotlib/examples/:/data -w="/data/" methplotlib \ 
+# bash -c "methplotlib -m NA19240-methylation_ACTB_calls.tsv.gz NA19240-methylation_ACTB_frequency.tsv.gz \
+#          -n calls frequencies -w chr7:5,525,542-5,543,028 \
+#          -g GRCh38-ACTB-locus.gtf.gz \
+#          --simplify \
+#          -b DNase_cluster_ACTB.bed.gz"
+

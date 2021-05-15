@@ -1,8 +1,5 @@
 FROM ubuntu:16.04
 
-LABEL description = "Minimal image for the J&J course Docker - example 2."
-MAINTAINER "Alexander Botzki" alexander.botzki@vib.be
-
 # Use bash as shell
 SHELL ["/bin/bash", "-c"]
 # Set workdir
@@ -36,7 +33,22 @@ ENV PATH="/usr/miniconda3/bin:${PATH}"
 ENV LC_ALL en_US.UTF-8
 ENV LC_LANG en_US.UTF-8
 
-# copy environment.yml into the image 
-COPY environment.yml /
-RUN conda env create -f /environment.yml && conda clean -a
-ENV PATH=/usr/miniconda3/envs/pipeline-tools-1.0.0/bin/:$PATH
+# Install package from conda
+RUN conda config --add channels conda-forge && \
+    conda config --add channels bioconda && \
+    conda create --name methplotlib && \
+    conda install --name methplotlib methplotlib=0.19.0
+    
+# add the environment to PATH 
+ENV PATH=/usr/miniconda3/envs/methplotlib/bin/:$PATH
+
+# add annotations for the docker image
+
+
+
+
+
+
+# add build instructions for this image
+
+
