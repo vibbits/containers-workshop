@@ -34,17 +34,17 @@ We start from a Dockerfile which has been prepared upfront and will add some sta
 
 5. Formulate an additional statement to address the error message and rebuild the Docker image. 
 
-5. Run the image with your user and group id, mount the local `data` folder to the internal `data`folder using the working directory `/data` on the example data described in the github repository of methplotlib.
+5. Run the image with your user and group id, mount the local `data` folder to the internal `data`folder using the working directory `/data` on the information in the example folder described in the github repository of methplotlib.
+
+- Which version of methplotlib is the current one?
 
 5. Have a look at the Dockerfile and what additional statements are present for annotation of the Docker image. It is good practise to provide metadata about the image, its maintainer and license for use. Furthermore, it is very handy for developers to have readily available instructions on how to build the container and run a basic command.
 
 ### Exercise part 2
 
-As an additional example, we would like to create a Docker image using a conda environment for methplotlib.
+As an additional example, we would like to create a Docker image using a conda environment for methplotlib. Again, a skeleton of the Dockerfile is present `Dockerfile.methplotlib.conda`.
 
-Again, a skeleton of the Dockerfile is present `Dockerfile.methplotlib.conda`.
-
-Add a statement for the installation of the tool. Check on latest version of methplotlib. 
+1. Add a statement for the installation of the tool to this Dockerfile. Please use the latest version of methplotlib.  
 The following commands will be useful:
 
 - conda create --name methplotlib
@@ -52,14 +52,14 @@ The following commands will be useful:
 - conda install --name methplotlib methplotlib=X.XX.X
 - conda config --add channels conda-forge
 
-Try to build the Docker image and run `methplotlib -v`.
+2. Try to build the Docker image and run `methplotlib -v`.
 
-With what Docker statement could you add the PATH `PATH=/usr/miniconda3/envs/methplotlib/bin/:$PATH`?
+- With what Docker statement could you add the PATH `PATH=/usr/miniconda3/envs/methplotlib/bin/:$PATH`?
 
-Add annotations as well as build instructions for the alternative Docker image.
+3. Add annotations as well as build instructions for the alternative Docker image based on first example.
 
 ### Exercise part 3
-Lastly, a `Dockerfile` has been provided which contains correct statements but the order is shuffled around which makes the file unusable as it is.
+Lastly, a file called `Dockerfile` has been provided which contains correct statements but the order is shuffled around which makes the file unusable as it is.
 Put the statements in the correct order and build the Docker image with the very simple environment for RNA-seq pre-processing steps.
 Please add also a correct example usage to check whether the fastqc tool in the containers runs correcty.
 
