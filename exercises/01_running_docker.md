@@ -91,7 +91,7 @@ The following exercises aim to give an idea of how folders and files are managed
 
 ---
 
-After these exercises it should be clear that docker containers will output files at `root`-level by default, however that we can overcome this behaviour by using the user ID and group ID levels on run-time. To generalize this command over different infrastructures (with possible different settings) we can provide it the following parameter `--user $(id -u):(id -g)`. 
+After these exercises it should be clear that docker containers will output files at `root`-level by default, however that we can overcome this behaviour by using the user ID and group ID levels on run-time. To generalize this command over different infrastructures (with possible different settings) we can provide it the following parameter `--user $(id -u):($id -g)`. 
 
 ## 4. Using working directories 
 
