@@ -67,7 +67,7 @@ This can be solved in two ways as we have seen from the theory.
 ### Exercise 2
 - Run a docker container and approach it interactively. In addition, mount the local `data/` folder to a new folder in the container `/data` within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Additional parameters: remove the container after it has run.   
 
-- Do a quality control on the WT samples by using the following command: `fastqc /data/WT_lib1_R1.fq.gz`. For this you can use the command here above and change the interactive part for the actual command. Why do we need to add `/data/` in the `fastqc` command. 
+- Do a quality control on the WT samples by using the following command: `fastqc /data/WT_lib1_R1.fq.gz` or `fastqc /data/ecoli_1.fastq.gz`. For this you can use the command here above and change the interactive part for the actual command. Why do we need to add `/data/` in the `fastqc` command. 
 
 --- 
 
