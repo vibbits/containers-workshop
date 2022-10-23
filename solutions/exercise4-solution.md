@@ -15,7 +15,7 @@ docker run \
     -w /data \
     -v $(pwd)/data/:/data \
     quay.io/biocontainers/fastqc:0.11.9--0 \
-    fastqc WT_lib1_R1.fq.gz
+    fastqc ecoli_1.fastq.gz
 ```
 Or instead of `-v`/`--volume`, use `--mount`:
 ```
