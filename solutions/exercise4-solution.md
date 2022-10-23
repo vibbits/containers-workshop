@@ -5,7 +5,7 @@ Execute a docker container by using the working directory option `-w` for a dire
 
 
 
-Execute a docker container with your user and group ID running `fastqc` on the file `WTXXX.fq.gz`. In addition, mount your current directory to the default working directory within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Verify that the HTML report is created with the correct file permissions.
+Execute a docker container with your user and group ID running `fastqc` on the file `ecoli_X.fastq.gz`. In addition, mount your current directory to the default working directory within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Verify that the HTML report is created with the correct file permissions.
 
 ```     
 # Solution (first remove the fastqc results with root permission that we created earlier)
@@ -22,8 +22,8 @@ Or instead of `-v`/`--volume`, use `--mount`:
 --mount type=bind,source=$(pwd)/data/,target=/data \
 ```
 
- - Extra: can you analyze all fastq files using a glob-pattern (`WT*.fq.gz`)? What do you need to change to make this work? 
-    - You will need to use `/bin/bash -c "fastqc WT*.fq.gz"`
+ - Extra: can you analyze all fastq files using a glob-pattern (`ecoli*.fastq.gz`)? What do you need to change to make this work? 
+    - You will need to use `/bin/bash -c "fastqc ecoli*.fq.gz"`
 
 Use the command `docker inspect` on the image `biocontainers/fastqc:v0.11.9_cv8` and extract the working directory (`WorkingDir`) using `grep`.
  - `docker inspect biocontainers/fastqc:v0.11.9_cv8 | grep 'WorkingDir'`
