@@ -23,5 +23,5 @@ On the host, find out which UID and GID you have. Tip: you can find your UID and
 
 Execute a docker container by using the `-u` parameter and and in the meantime creating a temporary file `file3.txt` with `touch`. In addition, mount your current directory to `/data` within the Docker container `quay.io/biocontainers/fastqc:0.11.9--0`. Check the file permissions of this file in the container.   
  - By using this command line, enter your UID and GID 
-`docker run --rm -v $(pwd)/data/:/scratch -u <your UID>:<your GID> quay.io/biocontainers/fastqc:0.11.9--0 touch scratch/file3.txt`
+`docker run --rm -v $(pwd)/data/:/scratch -u <your UID>:<your GID> quay.io/biocontainers/fastqc:0.11.9--0 touch /scratch/file3.txt`
  - Especially, on your Linux host, verify the file permissions of the file `file3.txt`.
