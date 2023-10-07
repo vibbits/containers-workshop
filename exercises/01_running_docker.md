@@ -17,12 +17,17 @@ For this set of exercises we will use a simple Docker container for `fastQC` pro
 At the end of the exercises, you will run `fastQC` on a fastq-file by using a Docker container.
 
 ### Data
-The example fastq file(s) are located in the `~/containers/data/` folder. If not present, or you want to download them yourself, you can retrieve them with the following commands. We will use them in combination with the Docker containers to mimic a simple, though relevant bioinformatics data analysis process. 
+The example fastq file(s) are located in the `./data/` folder. If not present, or you want to download them yourself, you can retrieve them with the following commands. We will use them in combination with the Docker containers to mimic a simple, though relevant bioinformatics data analysis process. 
 
+In the `data` folder, there is a download script which you can use on POSIX shell (Mac OS, Linux) with `bash downl-data.sh`.
+
+Alternatively, we could use these files stored as a zipped tar file.
 ```sh
 wget https://introduction-containers.s3.eu-central-1.amazonaws.com/ecoli_reads.tar.gz
 tar -xzvf ecoli_reads.tar.gz
 ```
+TODO: add Windows alternative
+
 Make sure they are located in the `data/` folder. 
 
 ## 1. Pull and run the Docker container
