@@ -2,7 +2,7 @@
 
 If you are joining us for this course or plan to try this material on your own, here is our plan to get you started and running the exercises.
 
-#### 0. If you have windows you need to start here (except you can start from 1).
+### 0. If you have windows you need to start here (except you can start from 1).
 
 You need to hae WSL the ***Windows subsystem for Linux*** (only Windows users). 
 
@@ -14,15 +14,17 @@ You need to hae WSL the ***Windows subsystem for Linux*** (only Windows users).
 
 **d.** To install or update your version use `wsl --install -d <dist_name>`, in this case we suggest **Ubuntu-20-04** 
 
-#### 1 . You will need to have **Docker desktop** installed so you run it locally.
+### 1 . You will need to have **Docker desktop** installed so you run it locally.
 
   for [Windows](https://docs.docker.com/desktop/install/windows-install/)
+
   for [MAC](https://docs.docker.com/desktop/install/mac-install/)
+  
   for [Linux](https://docs.docker.com/desktop/install/linux-install/)
 
 > You will need to enable WSL if you are using windows.
 
-#### 2. Get VScode (*Virtual Studio Code*) on your computer. It will be your terminal and your editor during this journey.
+### 2. Get VScode (*Virtual Studio Code*) on your computer. It will be your terminal and your editor during this journey.
 
 **a.** Install [VScode](https://code.visualstudio.com/download) in your system. If you are using MAC or Linux, you can use your own local terminal and your favorite editor. But you can also install VScode using the link above.
 
@@ -48,7 +50,7 @@ git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
 ```
 
-#### 3. You will need to clone the repository with the data and activities
+### 3. You will need to clone the repository with the data and activities
 
 **a.** If you are using MAC or Linux, you should be able to do to
 
