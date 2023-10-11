@@ -5,7 +5,7 @@ The first set of exercises are related to running Docker containers. They will g
 
 ### Learning outcomes
 After having completed these exercises you will be able to:  
-* Use the command line to run a bioinformatics tool on the command line
+* Use the command line to run a containerized bioinformatics tool on the command line
 * Set the default user and group with the `-u` option
 * Run a command inside a container non-interactively
 * Use `docker inspect`to get more information on an image and container
