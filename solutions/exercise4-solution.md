@@ -23,7 +23,7 @@ Or instead of `-v`/`--volume`, use `--mount`:
 ```
 
  - Extra: can you analyze all fastq files using a glob-pattern (`ecoli*.fastq.gz`)? What do you need to change to make this work? 
-    - You will need to use `/bin/bash -c "fastqc ecoli*.fq.gz"`
+    - You will need to use `/bin/bash -c "fastqc ecoli*.f*.gz"`
 
 Use the command `docker inspect` on the image `quay.io/biocontainers/fastqc:0.11.9--0` and extract the working directory (`WorkingDir`) using `grep`.
  - `docker inspect biocontainers/fastqc:v0.11.9_cv8 | grep 'WorkingDir'`
