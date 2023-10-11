@@ -11,11 +11,16 @@ After having completed these exercises you will be able to:
 
 This set of exercises aim to get you familiar with how a Docker image can be build. 
 
-### Prerequesite
+### Prerequisite
 
 - Clone the github repository of the course material https://github.com/vibbits/containers-workshop to your home folder
 
-### Exercise part 1
+## Exercise 1 part 1
+
+We would like to run some Python scripts in a headless form or via a Jupyterlab.
+
+
+### Exercise 2 part 1
 
 We start from a Dockerfile which has been prepared upfront and will add some statements iteratively to create a valid Dockerfile for the tool methplotlib developed at VIB UAntwerp by Wouter De Coster.
 
@@ -40,7 +45,7 @@ We start from a Dockerfile which has been prepared upfront and will add some sta
 
 5. Have a look at the Dockerfile and what additional statements are present for annotation of the Docker image. It is good practise to provide metadata about the image, its maintainer and license for use. Furthermore, it is very handy for developers to have readily available instructions on how to build the container and run a basic command.
 
-### Exercise part 2
+### Exercise 2 part 2
 
 As an additional example, we would like to create a Docker image using a conda environment for methplotlib. Again, a skeleton of the Dockerfile is present `Dockerfile.methplotlib.conda`.
 
@@ -58,7 +63,7 @@ The following commands will be useful:
 
 3. Add annotations as well as build instructions for the alternative Docker image based on first example.
 
-### Exercise part 3
+### Exercise 2 part 3
 Lastly, a file called `Dockerfile` has been provided which contains correct statements but the order is shuffled around which makes the file unusable as it is.
 Put the statements in the correct order and build the Docker image with the very simple environment for RNA-seq pre-processing steps.
 Please add also a correct example usage to check whether the fastqc tool in the containers runs correcty.
