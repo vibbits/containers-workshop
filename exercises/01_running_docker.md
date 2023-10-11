@@ -19,14 +19,14 @@ At the end of the exercises, you will run `fastQC` on a fastq-file by using a Do
 ### Data
 The example fastq file(s) are located in the `./data/` folder. If not present, or you want to download them yourself, you can retrieve them with the following commands. We will use them in combination with the Docker containers to mimic a simple, though relevant bioinformatics data analysis process. 
 
-In the `data` folder, there is a download script which you can use on POSIX shell (Mac OS, Linux) with `bash downl-data.sh`.
+In the `data` folder, there is a download script which you can use on POSIX shell (Mac OS, Linux) with `bash downl-data.sh` or `./downl-data.sh` when this shell script is executable.
 
-Alternatively, we could use these files stored as a zipped tar file.
+Alternatively, we could use other files stored online as a zipped tar file.
+
 ```sh
 wget https://introduction-containers.s3.eu-central-1.amazonaws.com/ecoli_reads.tar.gz
 tar -xzvf ecoli_reads.tar.gz
 ```
-TODO: add Windows alternative
 
 Make sure they are located in the `data/` folder. 
 
