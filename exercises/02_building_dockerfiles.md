@@ -30,9 +30,10 @@ Once you have built an image based on the corrected Dockerfile, run the script c
 
 ### Exercise 2
 
+We would like to create a simple Docker image which is based on the micromamba docker image. Consult the documentation and the Quick start document at https://micromamba-docker.readthedocs.io/en/latest/quick_start.html to construct a Dockerfile which uses the `environment.yml` file in the main folder of this repository.
+Once successfully build, run the fastqc command with the examples fastq.gz files used in the other chapter this morning.
 
-
-## Exploratory exercises
+## Exploratory exercises (no guarantee that the build process will still work)
 
 ### Exercise 3 part 1
 
