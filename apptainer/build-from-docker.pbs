@@ -20,22 +20,23 @@
 #PBS -m ae
 #PBS -M alexander.botzki@vib.be
         # Send an e-mail address when a job begins execution and/or ends or aborts
-#PBS -o stdout.$PBS_JOBID
-#PBS -e stderr.$PBS_JOBID
+#PBS -o $PBS_JOBID.stdout
+#PBS -e $PBS_JOBID.stderr
 #module purge
 #module load Package1 Package2 Package3
 
   # go to the (current) working directory (optional, if this is the
   # directory where you submitted the job)
 cd /tmp
+mkdir /tmp/$USER
 echo Start Job
 date
 
 APPTAINER_CACHEDIR=/tmp/ \
 APPTAINER_TMPDIR=/tmp/ \
-apptainer build --fakeroot /tmp/tensorflow-23.06-tf2-py3.sif \
+apptainer build --fakeroot /tmp/$USER/tensorflow-23.06-tf2-py3.sif \
 docker://nvcr.io/nvidia/tensorflow:23.06-tf2-py3
 
-mv  /tmp/tensorflow-23.06-tf2-py3.sif $VSC_DATA/apptainer-course/
+mv  /tmp/$USER/tensorflow-23.06-tf2-py3.sif $VSC_DATA/apptainer-course/
 date
 echo End Job
