@@ -1,0 +1,15 @@
+FROM mambaorg/micromamba:1.5.1
+
+LABEL description = "minimal image mamba - example 2 "
+LABEL maintainer = "Alexander Botzki, alexander.botzki@vib.be"
+
+# Use bash as shell
+SHELL ["/bin/bash", "-c"]
+
+# copy environment.yml into the image 
+COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml /tmp/env.yml
+
+RUN micromamba install -y -n base -f /tmp/env.yml && \
+    micromamba clean --all --yes
+# Set workdir
+WORKDIR /course
