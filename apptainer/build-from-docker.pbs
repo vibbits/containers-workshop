@@ -1,0 +1,41 @@
+#!/bin/bash
+#PBS -N apptainer-O76024-donphan
+#PBS -l nodes=1:ppn=4
+#PBS -l walltime=1:00:00
+
+  # Choose the queue on which to submit the job
+  # The currently defined queues (with walltime) for the UA-HPC are:
+        #     qshort    1 hour
+        #     qreg        1 day (24 hours)
+        #     qlong       3 days (72 hours)
+        #     qxlong    7 days (168 hours)
+        #     qxxlong   21 days (502 hours)
+        # Send "stdout" and/or "stderr" to your home directory when the job runs
+
+  # send mail notification (optional)
+  #   a        when job is aborted
+  #   b        when job begins
+  #   e        when job ends
+  #   M        your e-mail address (should always be specified)
+#PBS -m ae
+#PBS -M alexander.botzki@vib.be
+        # Send an e-mail address when a job begins execution and/or ends or aborts
+#PBS -o stdout.$PBS_JOBID
+#PBS -e stderr.$PBS_JOBID
+#module purge
+#module load Package1 Package2 Package3
+
+  # go to the (current) working directory (optional, if this is the
+  # directory where you submitted the job)
+cd /tmp
+echo Start Job
+date
+
+APPTAINER_CACHEDIR=/tmp/ \
+APPTAINER_TMPDIR=/tmp/ \
+apptainer build --fakeroot /tmp/tensorflow-23.06-tf2-py3.sif \
+docker://nvcr.io/nvidia/tensorflow:23.06-tf2-py3
+
+mv  /tmp/tensorflow-23.06-tf2-py3.sif $VSC_DATA/apptainer-course/
+date
+echo End Job
