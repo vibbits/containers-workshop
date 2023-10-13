@@ -7,24 +7,22 @@
 #PBS -o $PBS_JOBID.stdout
 #PBS -e $PBS_JOBID.stderr
 
-# eventually load other modules
 #module purge
 #module load Package1 Package2 Package3
 
-# go to the (current) working directory (optional, if this is the
-# directory where you submitted the job)
+  # go to the (current) working directory (optional, if this is the
+  # directory where you submitted the job)
 cd /tmp
 mkdir /tmp/$USER
-
 echo Start Job
 date
 
 APPTAINER_CACHEDIR=/tmp/ \
 APPTAINER_TMPDIR=/tmp/ \
-apptainer build --fakeroot /tmp/$USER/tensorflow-23.06-tf2-py3.sif \
-docker://nvcr.io/nvidia/tensorflow:23.06-tf2-py3
+apptainer build --fakeroot /tmp/$USER/application.sif $VSC_DATA/apptainer-course/basicServer.def
 
-mv  /tmp/$USER/tensorflow-23.06-tf2-py3.sif $VSC_DATA/apptainer-course/
+mv  /tmp/$USER/application.sif $VSC_DATA/
+rm -r /tmp/$USER
 
 date
 echo End Job
