@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: osgeo/gdal:ubuntu-full-3.6.3
+
+%help
+    This container is intended to use a pre-built gdal image and install the
+   `geopandas` python library.
+
+%post
+    curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3 get-pip.py && rm get-pip.py
+    pip install geopandas
+
+%runscript
+    echo "The geopandas version is `pip freeze | grep geopandas`"
+
+%labels
+    Author hpc@uconn
+    Version v0.1
