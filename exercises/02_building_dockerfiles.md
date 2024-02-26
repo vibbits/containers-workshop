@@ -48,7 +48,7 @@ Once successfully build, run the fastqc command with the examples fastq.gz files
 
 ### Exercise 3
 
-We would like to build a simple Docker image which is based on the base image `ray` version 1.10.0 of the `rayproject`. Consult the documentation and the Quick start document at https://micromamba-docker.readthedocs.io/en/latest/quick_start.html to construct a Dockerfile which uses the `requirements.txt` file in the main folder of this repository.
+We would like to build a simple Docker image which is based on the base image `ray` version 1.10.0 of the `rayproject`. Consult the setup referenced here (https://github.com/anyscale/academy/tree/main/ray-serve/e2e/deploy-cloud-run) to construct a Dockerfile which uses the `requirements.txt` file in the main folder of this repository.
 Once successfully build, run the command `python test-query.py`.
 
 ## Exploratory exercises (no guarantee that the build process will still work)
