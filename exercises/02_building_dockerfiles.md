@@ -28,6 +28,19 @@ Have a look at this Dockerfile and bring the statements in the correct order so 
 
 Once you have built an image based on the corrected Dockerfile, run the script codereppy_min_batch with the Python version installed in the image.
 
+### Exercise 1A part 1
+
+Imagine the following situation. To make a simple data analysis project as reproducible as possible, we propose to create a container environment using Docker which contains the necessary tools and scripts. 
+We have two use cases: a) we would like to run the Python scripts in a headless form.
+
+In order to create a Dockerfile for these use cases, a scrambled Dockerfile has been created and is provided as starting point for this exercise.
+
+Have a look at this Dockerfile `accidents/Dockerfile` and bring the statements in the correct order so that building the Docker image works fine.
+
+### Exercise 1A part 2
+
+Once you have built an image based on the corrected Dockerfile, run the script `accidents.R --data <dataset>` using the dataset in the folder `data` with the Python version installed in the image.
+
 ### Exercise 2
 
 We would like to create a simple Docker image which is based on the micromamba docker image. Consult the documentation and the Quick start document at https://micromamba-docker.readthedocs.io/en/latest/quick_start.html to construct a Dockerfile which uses the `environment.yml` file in the main folder of this repository.
