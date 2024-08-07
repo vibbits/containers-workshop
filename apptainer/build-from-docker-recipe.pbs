@@ -14,16 +14,16 @@
 # directory where you submitted the job)
 cd /tmp
 mkdir /tmp/$USER
+cp $VSC_SCRATCH/containers-workshop/apptainer/environment.yml /tmp/environment.yml
 
 echo Start Job
 date
 
 APPTAINER_CACHEDIR=/tmp/ \
 APPTAINER_TMPDIR=/tmp/ \
-apptainer build --fakeroot /tmp/$USER/tensorflow-23.06-tf2-py3.sif \
-docker://nvcr.io/nvidia/tensorflow:23.06-tf2-py3
+apptainer build --fakeroot /tmp/$USER/mutatex.sif $VSC_SCRATCH/containers-workshop/apptainer/mutatex.def
 
-mv  /tmp/$USER/tensorflow-23.06-tf2-py3.sif $VSC_SCRATCH/apptainer-course/
+mv /tmp/$USER/mutatex.sif $VSC_SCRATCH/
 
 date
 echo End Job
