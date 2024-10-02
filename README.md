@@ -52,7 +52,7 @@ Day 2
 
 ## 1. GET YOUR COMPUTER READY
 
-For this course we are going to use some tools,you can find the detailes instructions for **any operating system*** in our [Get Ready chapter](https://github.com/vibbits/containers-workshop/blob/main/Get_ready_for_the_course.md). 
+For this course we are going to use some tools,you can find the detailes instructions for **any operating system*** in our [Get Ready chapter](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Get_ready_for_the_course.md#1). 
 
 
 ## Learning Outcomes
