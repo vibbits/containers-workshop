@@ -47,7 +47,7 @@ edition:  5th
 orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
 -->
 
-# Containers workshop
+# Introduction to Containers workshop
 
 ```json   @JSONLD
 {
@@ -58,19 +58,18 @@ orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
     "@type": "CreativeWork",
     "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
   },
-  "description": "Strategic Use of Generative AI - this is our hands-on course for general use and research-specific use of Generative AI.",
-  "keywords": "FAIR, OPEN, Generative AI, Writing, Ethics, Scripting",
-  "name": "Strategic Use of Generative AI",
+  "description": "Introduction to Docker and Apptainer",
+  "keywords": "Docker, Containers, Recipes, Singularity",
+  "name": "Introduction to Docker and Apptainer",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "educationalLevel": "beginner",
   "competencyRequired": "none",
   "teaches": [
-    "Providing a background of the evolution of generative AI models",
-    "Providing an overview of the features and capabilities of genAI",
-    "Analysing prompt engineering techniques for different purposes",
-    "Exploring several applications of genAI in academic research (afternoon session)", 
-    "Providing hands-on experience with using different genAI tools for work and research purposes",
-    "Critically evaluating the AI generated outcomes"
+    "Define what containers are and articulate the differences between Docker and Singularity.",
+   "Identify the components of a Docker recipe and correlate with the layers within a Docker image.",
+   "List the benefits of containerization, considering reproducibility, usage and installation.",
+   "Recognize the use cases where Docker is the preferred method for deploying applications.",
+    "Discuss case studies to justify the selection of Docker or Singularity for specific deployment scenarios."
   ],
   "audience": "researchers",
   "inLanguage": "en-US",
