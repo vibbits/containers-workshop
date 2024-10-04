@@ -1,4 +1,119 @@
+<!--
+
+author:   Alexander Botzki, Bruna Piereck
+email:    training@vib.de
+version:  1.0.0
+language: en
+narrator: UK English Female
+
+icon:     https://vib.be/sites/vib.sites.vib.be/files/logo_VIB_noTagline.svg
+
+comment:  This document shall provide an entire compendium and course on the
+          development of Open-courSes with [LiaScript](https://LiaScript.github.io).
+          As the language and the systems grows, also this document will be updated.
+          Feel free to fork or copy it, translations are very welcome...
+
+script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+          https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
+
+link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
+link:     https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
+link:     https://raw.githubusercontent.com/vibbits/material-liascript/master/img/org.css
+link:     https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css
+link:     https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap
+link:     https://fonts.googleapis.com/css2?family=Open+Sans&display=swap
+link:     https://raw.githubusercontent.com/vibbits/material-liascript/master/vib-styles.css
+
+tutor:    Introduction to Docker and Singularity
+edition:  5th 
+
+@JSONLD
+<script run-once>
+  let json = @0 
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify(json);
+
+  document.head.appendChild(script);
+
+  // this is only needed to prevent and output,
+  // as long as the result of a script is undefined,
+  // it is not shown or rendered within LiaScript
+  console.debug("added json to head")
+</script>
+@end
+
+orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
+-->
+
 # Containers workshop
+
+```json   @JSONLD
+{
+  "@context": "https://schema.org/",
+  "@type": "LearningResource",
+  "@id": "https://elixir-europe-training.github.io/ELIXIR-TrP-TeSS/",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@type": "CreativeWork",
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+  },
+  "description": "Strategic Use of Generative AI - this is our hands-on course for general use and research-specific use of Generative AI.",
+  "keywords": "FAIR, OPEN, Generative AI, Writing, Ethics, Scripting",
+  "name": "Strategic Use of Generative AI",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "educationalLevel": "beginner",
+  "competencyRequired": "none",
+  "teaches": [
+    "Providing a background of the evolution of generative AI models",
+    "Providing an overview of the features and capabilities of genAI",
+    "Analysing prompt engineering techniques for different purposes",
+    "Exploring several applications of genAI in academic research (afternoon session)", 
+    "Providing hands-on experience with using different genAI tools for work and research purposes",
+    "Critically evaluating the AI generated outcomes"
+  ],
+  "audience": "researchers",
+  "inLanguage": "en-US",
+  "learningResourceType": [
+    "tutorial"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Bruna Piereck"
+    },
+    {
+      "@type": "Person",
+      "name": "Alexander Botzki"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "name": "Christof De Bo"
+    }
+  ]
+}
+```
+
+
+<section>
+
+Hello and welcome to our @tutor workshop! We are very happy to have you here.
+
+This is the @edition edition of this workshop, jointly organised by VIB and ELIXIR.
+
+<img src="./images/cover-genAI.png" width="650" align="center"/>
+
+Example image to ilustrate the front page of the material. This image was designed by Bruna Piereck.
+
+> We are using the interactive Open Educational Resource online/offline course infrastructure called LiaScript.
+> It is a distributed way of creating and sharing educational content hosted on github.
+> To see this document as an interactive LiaScript rendered version, click on the
+> following link/badge: [LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/introduction-to-generative-ai/main/README.md)
+
+## General context
+
 This repository contains the materials (exercises) for the workshop on containers of May 20, 2021. We will focus on Docker and Singularity.
 Subsequent editions have taken place in January and October 2022 and March 2023, October 2023 and February 2024.
 
@@ -6,67 +121,166 @@ Some exercises are inspired upon the examples from [Microsoft Azure ML github re
 
 Other exercises are co-created with the [Code Reproducibility team of the ELIXIR network](https://github.com/elixir-europe-training/CodeReproducibility)
 
-## Contributors
+The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](#2) .
 
-[![ORCID](https://raw.githubusercontent.com/vibbits/rdm-introductory-course/main/images/logos/32px-ORCID_iD.svg.png)](https://orcid.org/0000-0001-6691-4233) Alexander Botxki
-[![ORCID](https://raw.githubusercontent.com/vibbits/rdm-introductory-course/main/images/logos/32px-ORCID_iD.svg.png)](https://orcid.org/0000-0001-5958-0669) Bruna Piereck
-[![ORCID](https://raw.githubusercontent.com/vibbits/rdm-introductory-course/main/images/logos/32px-ORCID_iD.svg.png)](https://orcid.org/0000-0002-3926-7293) Tuur Muyldermans
+## Proposed Schedule
 
-## About this course
+Schedule day 1:
 
-session under development
+- 9:30 - 11:00 - session Introduction to Docker
+   - Focus on Large Language Models (LLMs)
+- 11:00 - 11:15 - break
+- 11:15 - 12:45 - session Docker 
+   - Tools for genAI (CoPilot, Perplexity and other competitors)
+   - Prompt engineering
+   - Ethical considerations
+   - Ownership, copyright and authenticity
+- 12:45 - 13:45 - lunch
+- 13:45 - 15:15 - session Docker 
+   - Conducting a literature review
+   - Finding research gaps
+   - Writing an article (storytelling, etc.)
+   - Presenting the outcome
+- 15:15 - 15:30 - break
+- 15:30 - 17:00 - session Docker recipes
+   - Doing quantitative research
 
-## Material license
+Schedule day 2:
 
-[<img src="https://raw.githubusercontent.com/vibbits/introduction-github/master/images/logos/CC-by.png" title="" alt="" width="143">](https://creativecommons.org/licenses/by/4.0/)
+- 9:30 - 11:00 - recap day 1 
+   - Bring the pieces together - exercise 5
+- 11:00 - 11:15 - break
+- 11:15 - 12:45 - session Introduction to Generative AI
+   - Tools for genAI (CoPilot, Perplexity and other competitors)
+   - Prompt engineering
+   - Ethical considerations
+   - Ownership, copyright and authenticity
+- 12:45 - 13:45 - lunch
+- 13:45 - 15:15 - session Generative AI for Writing
+   - Conducting a literature review
+   - Finding research gaps
+   - Writing an article (storytelling, etc.)
+   - Presenting the outcome
+- 15:15 - 15:30 - break
+- 15:30 - 17:00 - session Generative AI for Scripting
+   - Doing quantitative research
 
-[**CC-BY**](https://creativecommons.org/licenses/by/4.0/)
+</section>
 
-## Program
+# Lesson overview
 
-Day 1
+> <i class="fa fa-lock"></i> **License:** [Creative Commons Attribution 4.0 International  License](https://creativecommons.org/licenses/by/4.0/deed.en)
+>
+> <i class="fa fa-user"></i> **Target Audience:** Researchers
+>
+> <svg xmlns="http://www.w3.org/2000/svg" height="14" width="16" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M384 64c0-17.7 14.3-32 32-32H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H448v96c0 17.7-14.3 32-32 32H320v96c0 17.7-14.3 32-32 32H192v96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h96V320c0-17.7 14.3-32 32-32h96V192c0-17.7 14.3-32 32-32h96V64z"/></svg> **Level:** Beginner  
+>
+> <i class="fa fa-arrow-left"></i> **Prerequisites**  
+> To be able to follow this course, learners should have knowledge in:
+> 
+> 1. Knowledge of Command line Interface is a plus  
+>
+> <i class="fa fa-bookmark"></i> **Description**  Over the last few months, the rapid establishment of generative AI and Large Language Models (LLM) has opened new frontiers in a variety of domains. This hands-on class aims to provide you the necessary skills to effectively use this cutting-edge technology in a interdisciplinary way. With two formats of participation possible, we wish to offer opportunities for everyone to build enough knowledge to a variety of applications. In the morning you will follow an introduction on ethics, ownership and general hands-on application of generative AI that can be used holistically. This is meant for anyone including admin, support, and others to use for their work or personal interests. After a general view, we will navigate deeper in the use of generative AI for research, from scientific writing to analysis, we will introduce how genAI can be supportive in this process. We will cover different aspects of using ChatBots powered with LLMs, including the ethical and ownership aspects, the theoretical background and several examples of practical application among which how to strategically prompt your request for text generation in any context,  how to generate high-quality content for research papers, and grant applications.
+> 
+> <i class="fa fa-arrow-right"></i> **Learning Outcomes:**  
+> By the end of the course, learners will be able to:
+>
+> 1. Define what containers are and articulate the differences between Docker and Singularity. [Knowledge]
+> 2. Discuss case studies to justify the selection of Docker or Singularity for specific deployment scenarios. [Knowledge]
+> 3. Assess the ease-of-use and user-friendliness of Docker and Singularity for deploying complex applications. [Knowledge and Comprehension]
+> 4. Identify the components of a Docker recipe and correlate with the layers within a Docker image. [Knowledge and Comprehension]
+> 5. List the benefits of containerization, considering reproducibility, usage and installation. [Knowledge]
+> 6. Recognize the use cases where Docker is the preferred method for deploying applications. [Knowledge]
+> 7. Analyze the components of a Docker recipe and their impact on container performance and storage. [Comprehension]
+> 8. Summarize the process of writing a Docker recipe, building Docker images, and running containers. [Synthesis]
+> 9. Explain the importance of Docker caching and working with I/O volumes in containerized environments. [Comprehension]
+> 10. Compare advantages and disadvantages of Docker and Singularity for specific use cases, including distribution methods and safety. [Knowledge and Comprehension]
+> 11. Apply Docker commands and utilize Docker containers to deploy web applications and analysis tools [Apply]
+> 12. Develop Docker recipes and Singularity images tailored to the needs of different analysis pipelines. [Apply]
+> 13. Creating Singularity images based on Docker recipes for running in an HPC environment [Apply]
+>
+>> Check more about [Bloom's taxonomy](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/) to categorize the levels in educational goals
+>
+> <i class="fa fa-hourglass"></i> **Time estimation**: 360 minutes
+>
+> <i class="fa fa-asterisk"></i> **Requirements:** The (technical) installation requirements are described in the Chapters overview section Getting ready.
+>
+> <i class="fa fa-envelope-open-text"></i> **Supporting Materials**:
+> 
+> 1. [Exercises and solutions](https://github.com/vibbits/introduction-to-generative-ai)
+> 2. [Slides morning]()
+> 3. [Slides afternoon]()  
+> 
+> <i class="fa fa-life-ring"></i> **Acknowledgement**:
+>
+> * [ELIXIR Belgium](https://www.elixir-belgium.org/)
+> * [VIB Technologies](https://www.vib.be/)
+>
+> <i class="fa fa-money-bill"></i> **Funding:** This project has received funding from VIB.
+>
+> <i class="fa fa-anchor"></i> **PURL**:  
 
-| Time  | Session                                                                   |
-| ----- | ------------------------------------------------------------------------- |
-| 9h30  | -                                           |
-| 11h00 | Coffee break                                                              |
-| 11h15 | -                               |
-| 13h00 | Lunch                                                                     |
-| 14h00 | -                                              |
-| 14h40 | Coffee break                                                              |
-| 14h55 | -                                                        |
-| 17h00 | -                                                          |
 
-Day 2
+# Authors and Contributors
 
-| Time  | Session                                                                   |
-| ----- | ------------------------------------------------------------------------- |
-| 9h30  | -                                                  |
-| 11h00 | Coffee break                                                              |
-| 11h15 | -                             |
-| 13h00 | Lunch                                                                     |
-| 14h00 | -                               |
-| 14h40 | Coffee break                                                              |
-| 14h55 | -                                                         |
-| 17h00 | End of the day                                                            |
+Authors
 
-## 1. GET YOUR COMPUTER READY
+- [Bruna Piereck](@[orcid](https://orcid.org/0000-0001-5958-0669)
+- [Alexander Botzki](@[orcid](https://orcid.org/0000-0001-6691-4233)
+- [Tuur Muyldermans]([orcid](https://orcid.org/0000-0002-3926-7293)
 
-For this course we are going to use some tools,you can find the detailes instructions for **any operating system*** in our [Get Ready chapter](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Get_ready_for_the_course.md#1). 
+Contributors
 
+- we welcome contributors for these materials
 
-## Learning Outcomes
+## Citing this lesson
 
-1. Define what containers are and articulate the differences between Docker and Singularity. [Knowledge]
-2. Discuss case studies to justify the selection of Docker or Singularity for specific deployment scenarios. [Knowledge]
-3. Assess the ease-of-use and user-friendliness of Docker and Singularity for deploying complex applications. [Knowledge and Comprehension]
-4. Identify the components of a Docker recipe and correlate with the layers within a Docker image. [Knowledge and Comprehension]
-5. List the benefits of containerization, considering reproducibility, usage and installation. [Knowledge]
-6. Recognize the use cases where Docker is the preferred method for deploying applications. [Knowledge]
-7. 12. Analyze the components of a Docker recipe and their impact on container performance and storage. [Comprehension]
-8. Summarize the process of writing a Docker recipe, building Docker images, and running containers. [Synthesis]
-9. Explain the importance of Docker caching and working with I/O volumes in containerized environments. [Comprehension]
-10. Compare advantages and disadvantages of Docker and Singularity for specific use cases, including distribution methods and safety. [Knowledge and Comprehension]
-11. Apply Docker commands and utilize Docker containers to deploy web applications and analysis tools [Apply]
-13. Develop Docker recipes and Singularity images tailored to the needs of different analysis pipelines. [Apply]
-14. Creating Singularity images based on Docker recipes for running in an HPC environment [Apply]
+Please cite as:
+
+  1. to be added once we have released the first version
+
+# Chapters List
+
+| Chapter | Title                                                   |
+| :---- | :------------------------------------------------         |
+| 0     | [Getting Ready](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Get_ready_for_the_course.md#1).  |
+| 1     | [Strategic use of generative AI for all](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter01.md)  |
+| 2     | [Strategic use of generative AI for research](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter02.md)  |
+# References
+
+Here are some great tips for learning and to get inspired for your own use:
+
+* [EC ERA Forum doc - CC-BY](https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en?filename=ec_rtd_ai-guidelines.pdf)
+* [Library Toronto](https://onesearch.library.utoronto.ca/copyright/generative-ai-tools-and-copyright-considerations)
+* [tools list Georgetown](https://guides.library.georgetown.edu/ai/tools)
+* [UWaterloo CA June 2024](https://uwaterloo.ca/associate-vice-president-academic/sites/default/files/uploads/documents/genai-overview-final-june-2024.pdf)
+* [University framework on GenAI for research](https://arxiv.org/html/2404.19244v1)
+* [prompting guide from Cape Town university](https://docs.google.com/document/d/1EHMRP4kxADwLsOkHwAbUWQaGD8EGfQ3D/edit)
+* [guide for ethical use in research](https://docs.google.com/document/d/14XaTVheTtr7XpDWX33OthT4piMHnYUfl/edit)
+* [genAI for marketing content creation](https://sciendo.com/article/10.2478/nimmir-2024-0002)
+
+# About us
+
+*About ELIXIR Training Platform*
+
+The ELIXIR Training Platform was established to develop a training community that spans all ELIXIR member states (see the list of Training Coordinators). It aims to strengthen national training programmes, grow bioinformatics training capacity and competence across Europe, and empower researchers to use ELIXIR's services and tools.
+
+One service offered by the Training Platform is TeSS, the training registry for the ELIXIR community. Together with ELIXIR France and ELIXIR Slovenia, VIB as lead node for ELIXIR Belgium is engaged in consolidating quality and impact of the TeSS training resources (2022-23) (https://elixir-europe.org/internal-projects/commissioned-services/2022-trp3).
+
+The Training eSupport System was developed to help trainees, trainers and their institutions to have a one-stop shop where they can share and find information about training and events, including training material. This way we can create a catalogue that can be shared within the community. How it works is what we are going to find out in this course.
+
+*About VIB and VIB Technologies*
+
+VIB is an entrepreneurial non-profit research institute, with a clear focus on groundbreaking strategic basic research in life sciences and operates in close partnership with the five universities in Flanders – Ghent University, KU Leuven, University of Antwerp, Vrije Universiteit Brussel and Hasselt University.
+
+As part of the VIB Technologies, the 12 VIB Core Facilities, provide support in a wide array of research fields and housing specialized scientific equipment for each discipline. Science and technology go hand in hand. New technologies advance science and often accelerate breakthroughs in scientific research. VIB has a visionary approach to science and technology, founded on its ability to identify and foster new innovations in life sciences.
+
+The goal of VIB Technology Training is to up-skill life scientists to excel in the domains of VIB Technologies, Bioinformatics & AI, Software Development, and Research Data Management.
+
+--------------------------------------------
+
+*Editorial team for this course*
+
+Authors: @[orcid(Alexander Botzki)](https://orcid.org/0000-0001-6691-4233), @[orcid(Bruna Piereck)](https://orcid.org/0000-0001-5958-0669)
+
+Technical Editors: Alexander Botzki
