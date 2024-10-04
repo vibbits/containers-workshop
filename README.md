@@ -130,19 +130,15 @@ Schedule day 1:
    - Focus on Large Language Models (LLMs)
 - 11:00 - 11:15 - break
 - 11:15 - 12:45 - session Docker 
-   - Tools for genAI (CoPilot, Perplexity and other competitors)
-   - Prompt engineering
-   - Ethical considerations
-   - Ownership, copyright and authenticity
+   - ...
+   - ...
 - 12:45 - 13:45 - lunch
 - 13:45 - 15:15 - session Docker 
-   - Conducting a literature review
-   - Finding research gaps
-   - Writing an article (storytelling, etc.)
-   - Presenting the outcome
+   - ...
+   - ...
 - 15:15 - 15:30 - break
 - 15:30 - 17:00 - session Docker recipes
-   - Doing quantitative research
+   - ...
 
 Schedule day 2:
 
@@ -150,19 +146,13 @@ Schedule day 2:
    - Bring the pieces together - exercise 5
 - 11:00 - 11:15 - break
 - 11:15 - 12:45 - session Introduction to Generative AI
-   - Tools for genAI (CoPilot, Perplexity and other competitors)
-   - Prompt engineering
-   - Ethical considerations
-   - Ownership, copyright and authenticity
+   - ...
 - 12:45 - 13:45 - lunch
-- 13:45 - 15:15 - session Generative AI for Writing
-   - Conducting a literature review
-   - Finding research gaps
-   - Writing an article (storytelling, etc.)
-   - Presenting the outcome
+- 13:45 - 15:15 - session Singularity on the HPC
+   - ...
 - 15:15 - 15:30 - break
-- 15:30 - 17:00 - session Generative AI for Scripting
-   - Doing quantitative research
+- 15:30 - 17:00 - session Singilarity recipes
+   - ...
 
 </section>
 
@@ -179,7 +169,7 @@ Schedule day 2:
 > 
 > 1. Knowledge of Command line Interface is a plus  
 >
-> <i class="fa fa-bookmark"></i> **Description**  Over the last few months, the rapid establishment of generative AI and Large Language Models (LLM) has opened new frontiers in a variety of domains. This hands-on class aims to provide you the necessary skills to effectively use this cutting-edge technology in a interdisciplinary way. With two formats of participation possible, we wish to offer opportunities for everyone to build enough knowledge to a variety of applications. In the morning you will follow an introduction on ethics, ownership and general hands-on application of generative AI that can be used holistically. This is meant for anyone including admin, support, and others to use for their work or personal interests. After a general view, we will navigate deeper in the use of generative AI for research, from scientific writing to analysis, we will introduce how genAI can be supportive in this process. We will cover different aspects of using ChatBots powered with LLMs, including the ethical and ownership aspects, the theoretical background and several examples of practical application among which how to strategically prompt your request for text generation in any context,  how to generate high-quality content for research papers, and grant applications.
+> <i class="fa fa-bookmark"></i> **Description** The course will give an introduction to containers (Docker & Apptainer) which are great components to achieve portability and reproducibility of your analysis. You will learn how to use containers and how to build a container from scratch, share it with others and how to re-use and modify existing containers. After an extensive explanation on Docker containers, the Apptainer application, previously Singularity, and its use in the HPC will be highlighted as well. 
 > 
 > <i class="fa fa-arrow-right"></i> **Learning Outcomes:**  
 > By the end of the course, learners will be able to:
@@ -206,9 +196,8 @@ Schedule day 2:
 >
 > <i class="fa fa-envelope-open-text"></i> **Supporting Materials**:
 > 
-> 1. [Exercises and solutions](https://github.com/vibbits/introduction-to-generative-ai)
-> 2. [Slides morning]()
-> 3. [Slides afternoon]()  
+> 1. [Exercises and solutions](https://github.com/vibbits/containers-workshop)
+> 2. [Slides day 1+2](https://github.com/vibbits/containers-workshop/blob/main/presentations/docker_apptainer_workshop2024.pdf)  
 > 
 > <i class="fa fa-life-ring"></i> **Acknowledgement**:
 >
