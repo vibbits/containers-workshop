@@ -45,7 +45,6 @@ edition:  5th
 @end
 
 orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
--->
 
 # Introduction to Containers workshop
 
@@ -120,7 +119,7 @@ Some exercises are inspired upon the examples from [Microsoft Azure ML github re
 
 Other exercises are co-created with the [Code Reproducibility team of the ELIXIR network](https://github.com/elixir-europe-training/CodeReproducibility)
 
-The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](#2) .
+The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](https://docs.google.com/presentation/d/1z15Dtb2bGmV8wMti2q3iaerYmZrzgG1upKQ5rDVjODs/edit?usp=sharing) .
 
 ## Proposed Schedule
 
