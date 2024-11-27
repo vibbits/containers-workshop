@@ -190,7 +190,7 @@ Schedule day 2:
 >
 > <i class="fa fa-envelope-open-text"></i> **Supporting Materials**:
 > 
-> 1. [Exercises and solutions](https://github.com/vibbits/containers-workshop/exercises)
+> 1. [Exercises and solutions](https://github.com/vibbits/containers-workshop/tree/main/exercises)
 > 2. [Slides day 1+2](https://github.com/vibbits/containers-workshop/blob/main/presentations/docker_apptainer_workshop_20241015_v0.2.pdf)  
 > 
 > <i class="fa fa-life-ring"></i> **Acknowledgement**:
@@ -219,7 +219,7 @@ Contributors
 
 Please cite as:
 
-  1. to be added once we have released the first version
+  1. to be added once we have released the first DOI
 
 # References
 
