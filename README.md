@@ -200,7 +200,7 @@ Schedule day 2:
 >
 > <i class="fa fa-money-bill"></i> **Funding:** This project has received funding from VIB.
 >
-> <i class="fa fa-anchor"></i> **PURL**:  
+> <i class="fa fa-anchor"></i> **PURL**:  https://zenodo.org/badge/DOI/10.5281/zenodo.14231766.svg
 
 
 # Authors and Contributors
