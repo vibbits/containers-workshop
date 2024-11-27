@@ -70,7 +70,7 @@ Some exercises are inspired upon the examples from [Microsoft Azure ML github re
 
 Other exercises are co-created with the [Code Reproducibility team of the ELIXIR network](https://github.com/elixir-europe-training/CodeReproducibility)
 
-The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](https://docs.google.com/presentation/d/1z15Dtb2bGmV8wMti2q3iaerYmZrzgG1upKQ5rDVjODs/edit?usp=sharing) .
+The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](./presentations/docker_apptainer_workshop_20241015_v0.2.pdf) .
 
 ## Proposed Schedule
 
@@ -190,8 +190,8 @@ Schedule day 2:
 >
 > <i class="fa fa-envelope-open-text"></i> **Supporting Materials**:
 > 
-> 1. [Exercises and solutions](https://github.com/vibbits/containers-workshop)
-> 2. [Slides day 1+2](https://github.com/vibbits/containers-workshop/blob/main/presentations/docker_apptainer_workshop2024.pdf)  
+> 1. [Exercises and solutions](https://github.com/vibbits/containers-workshop/exercises)
+> 2. [Slides day 1+2](https://github.com/vibbits/containers-workshop/blob/main/presentations/docker_apptainer_workshop_20241015_v0.2.pdf)  
 > 
 > <i class="fa fa-life-ring"></i> **Acknowledgement**:
 >
@@ -221,13 +221,6 @@ Please cite as:
 
   1. to be added once we have released the first version
 
-# Chapters List
-
-| Chapter | Title                                                   |
-| :---- | :------------------------------------------------         |
-| 0     | [Getting Ready](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Get_ready_for_the_course.md#1).  |
-| 1     | [Chapter 1 Docker](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter01.md)  |
-| 2     | [Chapter 2 Singularity](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter02.md)  |
 # References
 
 Here are some great tips for learning and to get inspired for your own use:
