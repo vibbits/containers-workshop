@@ -24,9 +24,6 @@ link:     https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&disp
 link:     https://fonts.googleapis.com/css2?family=Open+Sans&display=swap
 link:     https://raw.githubusercontent.com/vibbits/material-liascript/master/vib-styles.css
 
-tutor:    Introduction to Docker and Singularity
-edition:  5th 
-
 @JSONLD
 <script run-once>
   let json = @0 
@@ -46,7 +43,64 @@ edition:  5th
 
 orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
 
+tutor:    Introduction to Docker and Singularity
+edition:  5th 
+
+-->
+
 # Introduction to Containers workshop
+
+<section>
+
+Hello and welcome to our @tutor workshop! We are very happy to have you here.
+
+This is the @edition edition of this workshop, jointly organised by VIB and ELIXIR.
+
+> We are using the interactive Open Educational Resource online/offline course infrastructure called LiaScript.
+> It is a distributed way of creating and sharing educational content hosted on github.
+> To see this document as an interactive LiaScript rendered version, click on the
+> following link/badge: [LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/main/README.md)
+
+## General context
+
+This repository contains the materials (exercises) for the workshop on containers of May 20, 2021. We will focus on Docker and Singularity.
+Subsequent editions have taken place in January and October 2022 and March 2023, October 2023 and February 2024.
+
+Some exercises are inspired upon the examples from [Microsoft Azure ML github repo](https://github.com/Azure/azureml-examples). The content of this repo is licensed with MIT license.
+
+Other exercises are co-created with the [Code Reproducibility team of the ELIXIR network](https://github.com/elixir-europe-training/CodeReproducibility)
+
+The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](https://docs.google.com/presentation/d/1z15Dtb2bGmV8wMti2q3iaerYmZrzgG1upKQ5rDVjODs/edit?usp=sharing) .
+
+## Proposed Schedule
+
+Schedule day 1:
+
+- 9:30 - 11:00 - session Introduction to Docker
+- 11:00 - 11:15 - break
+- 11:15 - 12:45 - session Docker 
+   - Registries
+   - Running
+- 12:45 - 13:45 - lunch
+- 13:45 - 15:15 - session Docker 
+   - Mounts
+   - Ports
+- 15:15 - 15:30 - break
+- 15:30 - 17:00 - session Docker recipes
+   - Building
+
+Schedule day 2:
+
+- 9:30 - 11:00 - recap day 1 
+   - Bring the pieces together - exercise 5
+- 11:00 - 11:15 - break
+- 11:15 - 12:45 - session Introduction to Singularity
+- 12:45 - 13:45 - lunch
+- 13:45 - 15:15 - session Singularity on the HPC
+- 15:15 - 15:30 - break
+- 15:30 - 17:00 - session Singilarity recipes
+
+</section>
 
 ```json   @JSONLD
 {
@@ -95,65 +149,6 @@ orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"-->
 ```
 
 
-<section>
-
-Hello and welcome to our @tutor workshop! We are very happy to have you here.
-
-This is the @edition edition of this workshop, jointly organised by VIB and ELIXIR.
-
-<img src="./images/cover-genAI.png" width="650" align="center"/>
-
-Example image to ilustrate the front page of the material. This image was designed by Bruna Piereck.
-
-> We are using the interactive Open Educational Resource online/offline course infrastructure called LiaScript.
-> It is a distributed way of creating and sharing educational content hosted on github.
-> To see this document as an interactive LiaScript rendered version, click on the
-> following link/badge: [LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/introduction-to-generative-ai/main/README.md)
-
-## General context
-
-This repository contains the materials (exercises) for the workshop on containers of May 20, 2021. We will focus on Docker and Singularity.
-Subsequent editions have taken place in January and October 2022 and March 2023, October 2023 and February 2024.
-
-Some exercises are inspired upon the examples from [Microsoft Azure ML github repo](https://github.com/Azure/azureml-examples). The content of this repo is licensed with MIT license.
-
-Other exercises are co-created with the [Code Reproducibility team of the ELIXIR network](https://github.com/elixir-europe-training/CodeReproducibility)
-
-The **presentations** which goes alongside this material can be found [in the Lesson overview: Slides](https://docs.google.com/presentation/d/1z15Dtb2bGmV8wMti2q3iaerYmZrzgG1upKQ5rDVjODs/edit?usp=sharing) .
-
-## Proposed Schedule
-
-Schedule day 1:
-
-- 9:30 - 11:00 - session Introduction to Docker
-   - Focus on Large Language Models (LLMs)
-- 11:00 - 11:15 - break
-- 11:15 - 12:45 - session Docker 
-   - ...
-   - ...
-- 12:45 - 13:45 - lunch
-- 13:45 - 15:15 - session Docker 
-   - ...
-   - ...
-- 15:15 - 15:30 - break
-- 15:30 - 17:00 - session Docker recipes
-   - ...
-
-Schedule day 2:
-
-- 9:30 - 11:00 - recap day 1 
-   - Bring the pieces together - exercise 5
-- 11:00 - 11:15 - break
-- 11:15 - 12:45 - session Introduction to Generative AI
-   - ...
-- 12:45 - 13:45 - lunch
-- 13:45 - 15:15 - session Singularity on the HPC
-   - ...
-- 15:15 - 15:30 - break
-- 15:30 - 17:00 - session Singilarity recipes
-   - ...
-
-</section>
 
 # Lesson overview
 
@@ -189,7 +184,7 @@ Schedule day 2:
 >
 >> Check more about [Bloom's taxonomy](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/) to categorize the levels in educational goals
 >
-> <i class="fa fa-hourglass"></i> **Time estimation**: 360 minutes
+> <i class="fa fa-hourglass"></i> **Time estimation**: 480 minutes
 >
 > <i class="fa fa-asterisk"></i> **Requirements:** The (technical) installation requirements are described in the Chapters overview section Getting ready.
 >
@@ -231,20 +226,14 @@ Please cite as:
 | Chapter | Title                                                   |
 | :---- | :------------------------------------------------         |
 | 0     | [Getting Ready](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Get_ready_for_the_course.md#1).  |
-| 1     | [Strategic use of generative AI for all](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter01.md)  |
-| 2     | [Strategic use of generative AI for research](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter02.md)  |
+| 1     | [Chapter 1 Docker](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter01.md)  |
+| 2     | [Chapter 2 Singularity](https://liascript.github.io/course/?https://raw.githubusercontent.com/vibbits/containers-workshop/refs/heads/main/Chapters/Chapter02.md)  |
 # References
 
 Here are some great tips for learning and to get inspired for your own use:
 
-* [EC ERA Forum doc - CC-BY](https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en?filename=ec_rtd_ai-guidelines.pdf)
-* [Library Toronto](https://onesearch.library.utoronto.ca/copyright/generative-ai-tools-and-copyright-considerations)
-* [tools list Georgetown](https://guides.library.georgetown.edu/ai/tools)
-* [UWaterloo CA June 2024](https://uwaterloo.ca/associate-vice-president-academic/sites/default/files/uploads/documents/genai-overview-final-june-2024.pdf)
-* [University framework on GenAI for research](https://arxiv.org/html/2404.19244v1)
-* [prompting guide from Cape Town university](https://docs.google.com/document/d/1EHMRP4kxADwLsOkHwAbUWQaGD8EGfQ3D/edit)
-* [guide for ethical use in research](https://docs.google.com/document/d/14XaTVheTtr7XpDWX33OthT4piMHnYUfl/edit)
-* [genAI for marketing content creation](https://sciendo.com/article/10.2478/nimmir-2024-0002)
+* [slides by Melbourne Bioinformatics.org](https://www.melbournebioinformatics.org.au/tutorials/tutorials/docker/media/#1)
+* [Introduction by BioCore CRG](https://github.com/biocorecrg/ELIXIR_containers_nextflow)
 
 # About us
 
