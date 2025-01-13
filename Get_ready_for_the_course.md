@@ -54,7 +54,7 @@ git config --global user.email "youremail@domain.com"
 git clone https://github.com/vibbits/containers-workshop.git
 ```
 
-### 3. Set your VSC account
+### 4. Set your VSC account
 
 * 3.1	  **Register** for an [HPC account](https://docs.vscentrum.be/access/vsc_account.html) before the course since it might take some time to process and activate. 
 
