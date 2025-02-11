@@ -2,11 +2,11 @@ check disk space: `docker system df`
 
 clean disk space:
 
-  Clean all dangling objects: `docker system prune`
+  - Clean all dangling objects: `docker system prune`
   
-  Clean all dangling images: `docker image prune`
+  - Clean all dangling images: `docker image prune`
   
-  Clean unused containers: `docker container prune`
+  - Clean unused containers: `docker container prune`
 
 Removing images and containers:
 
