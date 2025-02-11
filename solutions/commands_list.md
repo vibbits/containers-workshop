@@ -1,18 +1,26 @@
 check disk space: `docker system df`
+
 clean disk space:
+
   Clean all dangling objects: `docker system prune`
+  
   Clean all dangling images: `docker image prune`
+  
   Clean unused containers: `docker container prune`
+
 Removing images and containers:
+
 ```
 docker rm –f <container>
 docker rmi <image>
 ```
+
 Need to change a tag: `docker tag <image ID> name:version`
 
 Execute a command in a running container: `docker exec <container ID> <cmd>`
 
 Docker run options:
+
 ```
 -it : interactive run
 --detach: headless run
