@@ -33,3 +33,5 @@ Docker run options:
 Check image layers: `docker history <image>`
 
 Check image details: `docker inspect <image>`
+
+stop a running container: `docker stop <container id>`
