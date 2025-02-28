@@ -56,7 +56,10 @@ P.S.: If you use Poweshell you will have issues with path recognition and if you
 
 ### 3. You need Git 
 
-#### Install Git
+You will need this to be able to locally access the repository with the necessary mean to the exercises that will be developed in the course.
+
+Install Git
+------
 
 **a.** Install git 
 
@@ -71,7 +74,8 @@ git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
 ```
 
-#### Clone the repository
+Clone the repository
+------
 
 **a.** Access your terminal and in a course dedicated folder use the command bellow to clone the repository
 
