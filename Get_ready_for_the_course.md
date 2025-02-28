@@ -28,7 +28,7 @@ You need to have WSL the ***Windows subsystem for Linux*** (only Windows users).
 
   for [MAC](https://docs.docker.com/desktop/install/mac-install/)
   
-  for [Linux](https://docs.docker.com/desktop/install/linux-install/)
+  for Linux you can install it in [the terminal](https://docs.docker.com/engine/install/ubuntu/) directly and skip Docker Desktop, or install the [Desktop](https://docs.docker.com/desktop/install/linux-install/)
 
 > You will need to enable WSL if you are using windows. 
 
