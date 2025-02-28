@@ -37,9 +37,7 @@ For Linux you can install it in [the terminal](https://docs.docker.com/engine/in
 
 This step is specially relevant if you are Windows user. On Linux and MAC computers you are encoraged to use the local terminal and your favorite code editor. Hoever, you could still benefit from havin one of these installed and you can access them from your terminal or use as regular editor. These editor have integrated terminal what is specially important for Windows users.
 
-Suggested editors:
-
-[VScode](https://code.visualstudio.com/download)
+Suggested editor: [VScode](https://code.visualstudio.com/download)
 
 **a.** If you decide to use VSCode terminal instead of your native terminal, you will need to install the Docker extension to have docker running. 
 
