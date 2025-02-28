@@ -22,15 +22,15 @@ You need to have WSL the ***Windows subsystem for Linux***
 
 ### 2 . Install **Docker** or **Docker desktop** to run it locally.
 
-  For [Windows](https://docs.docker.com/desktop/install/windows-install/)
+For [Windows](https://docs.docker.com/desktop/install/windows-install/)
 
-  >
-  > You will need to enable WSL if you are using windows. 
-  >
+>
+> You will need to enable WSL if you are using windows. 
+>
 
-  For [MAC](https://docs.docker.com/desktop/install/mac-install/)
+For [MAC](https://docs.docker.com/desktop/install/mac-install/)
   
-  For Linux you can install it in [the terminal](https://docs.docker.com/engine/install/ubuntu/) directly and skip Docker Desktop, or install the [Desktop](https://docs.docker.com/desktop/install/linux-install/)
+For Linux you can install it in [the terminal](https://docs.docker.com/engine/install/ubuntu/) directly and skip Docker Desktop, or install the [Desktop](https://docs.docker.com/desktop/install/linux-install/)
 
 
 ### 3. Get any text editor to work
